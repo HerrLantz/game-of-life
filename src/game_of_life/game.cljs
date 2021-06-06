@@ -1,5 +1,6 @@
 (ns game-of-life.game
   (:require [clojure.set :refer [union
+                                 intersection
                                  difference]]))
 
 (defn create-cells
@@ -21,3 +22,11 @@
   [alive-cells]
   (-> (reduce (fn [acc curr] (-> (get-neighbours curr)
                                  (union acc))) #{} alive-cells)))
+
+(defn will-live?
+  [alive-cells cell]
+  (let [neighbours (get-neighbours cell)]
+    (-> neighbours
+        (intersection alive-cells)
+        count
+        (= 3))))
