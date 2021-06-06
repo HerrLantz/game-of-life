@@ -30,3 +30,9 @@
         (intersection alive-cells)
         count
         (= 3))))
+
+(defn step
+  [alive-cells]
+  (let [all-cells (get-all-cells alive-cells)]
+    (-> (filter (fn [cell] (will-live? alive-cells cell)) all-cells)
+        set)))
