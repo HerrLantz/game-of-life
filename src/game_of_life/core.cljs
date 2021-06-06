@@ -4,10 +4,6 @@
    [reagent.core :as reagent :refer [atom]]
    [reagent.dom :as rdom]))
 
-(defn multiply [a b] (* a b))
-
-(defonce app-state (atom {:text "Hello world!"}))
-
 (defn get-app-element []
   (gdom/getElement "app"))
 
