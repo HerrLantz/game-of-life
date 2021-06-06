@@ -4,6 +4,7 @@ pom.xml
 /classes/
 /out/
 /target/
+/resources/
 .lein-deps-sum
 .lein-repl-history
 .lein-plugins/
@@ -11,3 +12,4 @@ pom.xml
 .nrepl-port
 .cpcache/
 .rebel_readline_history
+
