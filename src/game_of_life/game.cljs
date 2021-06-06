@@ -9,13 +9,13 @@
 
 (defn get-neighbours
   [[x y]]
-  #{[(inc x)      y]    ;; x+1 y
-    [x       (inc y)]   ;; x   y+1
-    [(inc x) (inc y)]   ;; x+1 y+1
-    [(dec x)      y]    ;; x-1 y
-    [x       (dec y)]   ;; x   y-1
-    [(dec x) (dec y)]   ;; x-1 y-1
-    [(dec x) (inc y)]   ;; x-1 y+1
+  #{[(inc x)      y]
+    [x       (inc y)]
+    [(inc x) (inc y)]
+    [(dec x)      y]
+    [x       (dec y)]
+    [(dec x) (dec y)]
+    [(dec x) (inc y)]
     [(inc x) (dec y)]})
 
 (defn get-all-cells
