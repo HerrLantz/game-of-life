@@ -16,3 +16,8 @@
     [(dec x) (dec y)]   ;; x-1 y-1
     [(dec x) (inc y)]   ;; x-1 y+1
     [(inc x) (dec y)]})
+
+(defn get-all-cells
+  [alive-cells]
+  (-> (reduce (fn [acc curr] (-> (get-neighbours curr)
+                                 (union acc))) #{} alive-cells)))
