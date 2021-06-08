@@ -11,15 +11,22 @@
 (defn app
   []
   [:div
-   (game-board {:x 30 :y 30})
+   (game-board {:x 50 :y 50})
    (controlls)])
 
 (defn init-stylefy
   []
   (stylefy/init {:dom (stylefy-reagent/init)}))
 
+(defn mount-app-element
+  []
+  (->> (gdom/getElement "app")
+       (rdom/render [app])))
+
 (defn ^:export start
   []
   (init-stylefy)
-  (->> (gdom/getElement "app")
-       (rdom/render [app])))
+  (mount-app-element))
+
+(defn ^:after-load on-reload []
+  (mount-app-element))
