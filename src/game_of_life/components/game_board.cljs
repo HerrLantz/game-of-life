@@ -13,6 +13,11 @@
    :padding               "0"
    :margin                "0"})
 
+(def create-cell
+  (memoize (fn [x y alive]
+             (js/console.log (str "yay: " x y))
+             (cell {:x x :y y :alive alive}))))
+
 (defn game-board
   [{rows :x
     cols :y}]
@@ -20,8 +25,8 @@
     [:div {:style (get-style {:x rows :y cols})}
      (map-indexed (fn [idx1 y]
                     (map-indexed (fn [idx2 x]
-                                   (cell {:x x
-                                          :y y
-                                          :alive (contains? cells [x y])}))
+                                   (create-cell x
+                                                y
+                                                (contains? cells [x y])))
                                  (range rows)))
                   (range cols))]))
