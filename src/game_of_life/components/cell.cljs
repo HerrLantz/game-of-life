@@ -14,4 +14,5 @@
     y     :y}]
   [:div {:style    (get-style {:alive alive})
          :id       (str x y)
-         :on-click #(dispatch {:action :toggle-cell :value [x y]})}])
+         :on-click #(dispatch {:action :toggle-cell :value [x y]})
+         :key      (str x y)}])
