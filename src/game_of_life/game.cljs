@@ -3,7 +3,7 @@
                                  intersection
                                  difference]]))
 
-(def create-cells
+(defn create-cells
   []
   #{[12 12] [13 12] [14 12] [14 11] [13 10]})
 
