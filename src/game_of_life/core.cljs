@@ -9,13 +9,13 @@
 (defn get-app-element []
   (gdom/getElement "app"))
 
-(defn hello-world []
+(defn app []
   [:div
    (game-board {:x 30 :y 30})
    (controlls)])
 
 (defn mount [el]
-  (rdom/render [hello-world] el))
+  (rdom/render [app] el))
 
 (defn mount-app-element []
   (when-let [el (get-app-element)]
