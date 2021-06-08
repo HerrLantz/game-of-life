@@ -3,9 +3,9 @@
                                  intersection
                                  difference]]))
 
-(defn create-cells
+(def create-cells
   []
-  #{[0 0] [1 1] [1 0]})
+  #{[12 12] [13 12] [14 12] [14 11] [13 10]})
 
 (defn toggle-cell
   [alive-cells cell]
