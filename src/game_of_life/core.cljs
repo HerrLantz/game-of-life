@@ -3,27 +3,23 @@
    [goog.dom :as gdom]
    [reagent.core :as reagent :refer [atom]]
    [reagent.dom :as rdom]
+   [stylefy.core :as stylefy]
+   [stylefy.reagent :as stylefy-reagent]
    [game-of-life.components.game-board :refer [game-board]]
    [game-of-life.components.controlls :refer [controlls]]))
 
-(defn get-app-element []
-  (gdom/getElement "app"))
-
-(defn app []
+(defn app
+  []
   [:div
    (game-board {:x 30 :y 30})
    (controlls)])
 
-(defn mount [el]
-  (rdom/render [app] el))
+(defn init-stylefy
+  []
+  (stylefy/init {:dom (stylefy-reagent/init)}))
 
-(defn mount-app-element []
-  (when-let [el (get-app-element)]
-    (mount el)))
-
-(mount-app-element)
-
-(defn ^:after-load on-reload []
-  (mount-app-element))
-
-
+(defn ^:export start
+  []
+  (init-stylefy)
+  (->> (gdom/getElement "app")
+       (rdom/render [app])))
