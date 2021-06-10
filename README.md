@@ -1,10 +1,7 @@
 # game-of-life
 
-FIXME: Write a one-line description of your library/project.
+Conway's game of life written in clojurescript/reagent.
 
-## Overview
-
-FIXME: Write a paragraph about the library/project and highlight its goals.
 
 ## Development
 
@@ -30,8 +27,3 @@ To create a production build run:
 	lein fig:min
 
 
-## License
-
-Copyright © 2018 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
