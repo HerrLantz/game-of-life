@@ -17,6 +17,9 @@
   []
   [:div
    [:button (use-style (get-style)
+                       {:on-click #(dispatch {:action :back})})
+    "back"]
+   [:button (use-style (get-style)
                        {:on-click #(dispatch {:action :step})})
     "step"]
    [:button (use-style (get-style)
