@@ -1,12 +1,12 @@
 (ns ^:figwheel-hooks game-of-life.core
   (:require
-   [goog.dom :as gdom]
-   [reagent.core :as reagent :refer [atom]]
-   [reagent.dom :as rdom]
-   [stylefy.core :as stylefy]
-   [stylefy.reagent :as stylefy-reagent]
-   [game-of-life.components.game-board :refer [game-board]]
-   [game-of-life.components.controlls :refer [controlls]]))
+   [goog.dom                           :as gdom]
+   [reagent.core                       :as reagent         :refer [atom]]
+   [reagent.dom                        :as rdom]
+   [stylefy.core                       :as stylefy]
+   [stylefy.reagent                    :as stylefy-reagent]
+   [game-of-life.components.game-board                     :refer [game-board]]
+   [game-of-life.components.controlls                      :refer [controlls]]))
 
 (defn app
   []
