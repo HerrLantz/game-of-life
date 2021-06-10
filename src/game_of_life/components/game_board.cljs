@@ -15,7 +15,6 @@
 
 (def create-cell
   (memoize (fn [x y alive]
-             (js/console.log (str "yay: " x y))
              (cell {:x x :y y :alive alive}))))
 
 (defn game-board
